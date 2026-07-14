@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useCart } from "@/lib/cart";
 import { getProduct } from "@/lib/products";
+import { shopifyCheckoutUrl } from "@/lib/shopify";
 import { ProductArt } from "./ProductArt";
 
 export function CartDrawer() {
@@ -111,7 +112,14 @@ export function CartDrawer() {
           <button
             type="button"
             className="btn btn--primary cart__checkout"
-            onClick={() => window.alert("This is a demo storefront — checkout isn't wired up yet.")}
+            onClick={() => {
+              const url = shopifyCheckoutUrl(lines);
+              if (url) {
+                window.location.assign(url);
+              } else {
+                window.alert("Checkout isn't connected yet — the Shopify store link is coming soon.");
+              }
+            }}
           >
             Continue to checkout
           </button>

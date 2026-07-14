@@ -7,6 +7,7 @@ import { PurchasePanel } from "@/components/PurchasePanel";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { Reveal } from "@/components/Reveal";
+import { Reviews } from "@/components/Reviews";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -137,6 +138,9 @@ export default async function ProductPage({
           </figure>
         </div>
       </section>
+
+      {/* Reviews */}
+      {!product.comingSoon && <Reviews slug={product.slug} productName={product.name} />}
 
       {/* FAQ */}
       <section className="faq" aria-labelledby="faq-heading">

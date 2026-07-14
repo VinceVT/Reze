@@ -42,7 +42,7 @@ export function Header() {
           onClick={() => setOpen(true)}
           aria-label={`Open cart, ${count} ${count === 1 ? "item" : "items"}`}
         >
-          Cart
+          <span className="cart-button__label">Cart</span>
           <span className="cart-button__count" aria-hidden="true">
             {count}
           </span>
