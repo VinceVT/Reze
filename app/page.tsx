@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { products } from "@/lib/products";
-import { BoxFront, Packet, ProductArt } from "@/components/ProductArt";
+import { BoxFront, Capsules, Packet, ProductArt } from "@/components/ProductArt";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { Reveal } from "@/components/Reveal";
@@ -20,8 +20,9 @@ export default function HomePage() {
               Reset. Restore. <em>Rise.</em>
             </h1>
             <p className="hero__lede">
-              Two 5-gram rituals — one for waking, one for sleep — formulated at clinical doses to
-              work as a single system. Because a better morning starts the night before.
+              Two daily rituals — morning capsules for waking, an evening pour for sleep —
+              formulated at clinical doses to work as a single system. Because a better morning
+              starts the night before.
             </p>
             <div className="hero__actions">
               <Link href="/products/reset-duo" className="btn btn--primary">
@@ -61,8 +62,8 @@ export default function HomePage() {
             <p className="eyebrow">The system</p>
             <h2 id="system-heading">Every hour, accounted for.</h2>
             <p>
-              Start with one ritual or run the full system. Each box holds a month of single-dose
-              packets — tear, pour, done.
+              Start with one ritual or run the full system. Each box holds a month of doses — two
+              capsules at sunrise, one 10-gram pour at night.
             </p>
           </div>
 
@@ -122,11 +123,11 @@ export default function HomePage() {
           <Reveal>
             <div className="moment">
               <div className="moment__art" aria-hidden="true">
-                <Packet accent="day" label="Day" width={86} />
+                <Capsules width={150} />
               </div>
               <div className="moment__copy">
                 <span className="moment__time">07:10 — WITHIN AN HOUR OF WAKING</span>
-                <h3>Day, in cold water</h3>
+                <h3>Day, two capsules</h3>
                 <p>
                   Lion&rsquo;s mane, rhodiola, and a methylated B-complex meet your cortisol peak —
                   steady focus that doesn&rsquo;t ask caffeine to do all the work.
@@ -144,8 +145,8 @@ export default function HomePage() {
                 <span className="moment__time">15:00 — THE AFTERNOON DIP</span>
                 <h3>No crash to recover from</h3>
                 <p>
-                  Because the morning ran on adaptogens and hydration rather than stimulants, there
-                  is no spike to fall off. The dip flattens out over weeks of consistent use.*
+                  Because the morning ran on adaptogens rather than stimulants, there is no spike
+                  to fall off. The dip flattens out over weeks of consistent use.*
                 </p>
               </div>
             </div>
@@ -154,7 +155,7 @@ export default function HomePage() {
           <Reveal>
             <div className="moment moment--dark">
               <div className="moment__art" aria-hidden="true">
-                <Packet accent="night" label="Night" width={86} />
+                <Packet accent="night" label="Night" grams="10G" width={86} />
               </div>
               <div className="moment__copy">
                 <span className="moment__time">22:30 — SCREENS OFF</span>
@@ -202,7 +203,7 @@ export default function HomePage() {
                 <p className="tenet__num">01 / DOSE</p>
                 <h3>Clinical doses only</h3>
                 <p>
-                  If the research used 300&nbsp;mg, the packet has 300&nbsp;mg. An underdosed
+                  If the research used 300&nbsp;mg, the formula has 300&nbsp;mg. An underdosed
                   ingredient is marketing, not formulation — so we&rsquo;d rather leave it out.
                 </p>
               </div>

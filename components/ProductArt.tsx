@@ -61,14 +61,17 @@ export function BoxFront({
   width = 190,
   label,
   sublabel,
+  spec,
   className,
 }: {
   accent: Exclude<Accent, "duo">;
   width?: number;
   label: string;
   sublabel: string;
+  spec?: string;
   className?: string;
 }) {
+  const specLine = spec ?? specLineFor(accent);
   const uid = `box-${accent}`;
   return (
     <svg
@@ -128,7 +131,7 @@ export function BoxFront({
         textAnchor="middle"
         style={{ ...boxText, fontSize: 5.4, letterSpacing: 1.6, fill: "#6e7a96" }}
       >
-        DIETARY SUPPLEMENT · 30 – 5G PACKETS
+        {specLine}
       </text>
     </svg>
   );
@@ -138,11 +141,13 @@ export function Packet({
   accent,
   width = 76,
   label,
+  grams = "5G",
   className,
 }: {
   accent: "day" | "night" | "core";
   width?: number;
   label: string;
+  grams?: string;
   className?: string;
 }) {
   const uid = `pk-${accent}`;
@@ -197,8 +202,46 @@ export function Packet({
         textAnchor="middle"
         style={{ fontFamily: "var(--font-mono)", fontSize: 6, letterSpacing: 2, fill: "rgba(242,244,250,0.75)" }}
       >
-        5G
+        {grams}
       </text>
+    </svg>
+  );
+}
+
+/** Two Day capsules — slate-blue cap, porcelain body. */
+export function Capsules({ width = 150, className }: { width?: number; className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 170 120"
+      width={width}
+      height={(width / 170) * 120}
+      className={className}
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="cap-blue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#a3bde0" />
+          <stop offset="100%" stopColor="#6d89b4" />
+        </linearGradient>
+        <linearGradient id="cap-white" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#dfe6f0" />
+        </linearGradient>
+      </defs>
+      {/* rear capsule */}
+      <g transform="rotate(-24 100 52)">
+        <rect x="55" y="38" width="92" height="30" rx="15" fill="url(#cap-white)" />
+        <rect x="55" y="38" width="46" height="30" rx="15" fill="url(#cap-blue)" />
+        <rect x="93" y="38" width="8" height="30" fill="url(#cap-blue)" />
+        <rect x="60" y="43" width="80" height="5" rx="2.5" fill="#ffffff" opacity="0.35" />
+      </g>
+      {/* front capsule */}
+      <g transform="rotate(14 78 84)">
+        <rect x="22" y="68" width="92" height="30" rx="15" fill="url(#cap-white)" />
+        <rect x="22" y="68" width="46" height="30" rx="15" fill="url(#cap-blue)" />
+        <rect x="60" y="68" width="8" height="30" fill="url(#cap-blue)" />
+        <rect x="27" y="73" width="80" height="5" rx="2.5" fill="#ffffff" opacity="0.35" />
+      </g>
     </svg>
   );
 }
@@ -319,4 +362,12 @@ function sublabelFor(accent: Exclude<Accent, "duo">): string {
     : accent === "night"
       ? "Nighttime Support*"
       : "Longevity Support*";
+}
+
+function specLineFor(accent: Exclude<Accent, "duo">): string {
+  return accent === "day"
+    ? "DIETARY SUPPLEMENT · 60 CAPSULES"
+    : accent === "night"
+      ? "DIETARY SUPPLEMENT · 30 – 10G PACKETS"
+      : "DIETARY SUPPLEMENT · 30 – 5G PACKETS";
 }

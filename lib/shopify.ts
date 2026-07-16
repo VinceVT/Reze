@@ -13,7 +13,7 @@ import type { CartLine } from "./cart";
  * The numeric IDs are Shopify variant IDs (the tail of the variant GID).
  */
 
-export const SHOPIFY_DOMAIN = ""; // e.g. "rezesupps.myshopify.com" — filled in when the store is connected
+export const SHOPIFY_DOMAIN = "rezesupps.myshopify.com";
 
 type VariantMap = Partial<Record<"subscription" | "one-time", string>>;
 

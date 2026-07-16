@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s · REZE",
   },
   description:
-    "Two 5-gram daily rituals — Day for energy and focus, Night for sleep and recovery — formulated to work as one circadian system. Longevity support coming soon.",
+    "Two daily rituals — Day capsules for energy and focus, a Night drink for sleep and recovery — formulated to work as one circadian system. Longevity support coming soon.",
 };
 
 export const viewport: Viewport = {

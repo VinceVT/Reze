@@ -96,7 +96,7 @@ export default async function ProductPage({
       >
         <div className="container">
           <div className="section__head">
-            <p className={`eyebrow eyebrow--${product.accent}`}>Inside every packet</p>
+            <p className={`eyebrow eyebrow--${product.accent}`}>Inside every dose</p>
             <h2 id="ingredients-heading">Full label, full doses.</h2>
             <p>No proprietary blends — every dose printed here is printed on the box.</p>
           </div>

@@ -33,18 +33,18 @@ export const products: Product[] = [
     shortName: "Day",
     tagline: "Daily Support",
     description:
-      "A single 5g morning packet formulated for steady energy, clear focus, and cellular defense — without the spike-and-crash of stimulants.",
+      "Two morning capsules formulated for steady energy, clear focus, and cellular defense — without the spike-and-crash of stimulants.",
     accent: "day",
-    format: "30 × 5g packets",
+    format: "60 capsules · 30-day supply",
     priceOneTime: 60,
     priceSubscription: 48,
     ritual:
-      "Tear one packet into 8–12 oz of cold water within an hour of waking. Take with or without food.",
+      "Take two capsules with water within an hour of waking. With or without food.",
     benefits: [
       "Sustained mental energy without jitters*",
       "Sharper focus and working memory*",
       "Healthy stress response through the day*",
-      "Morning hydration and micronutrient base*",
+      "Complete morning micronutrient base*",
     ],
     ingredients: [
       {
@@ -77,11 +77,6 @@ export const products: Product[] = [
         dose: "Full spectrum",
         purpose: "Bioavailable B12 and folate for energy metabolism*",
       },
-      {
-        name: "Electrolyte blend",
-        dose: "Na · K · Mg",
-        purpose: "Morning rehydration after the overnight fast*",
-      },
     ],
     faq: [
       {
@@ -89,8 +84,8 @@ export const products: Product[] = [
         a: "No. Day is stimulant-free by design. It pairs well with your normal coffee or tea — L-theanine in the formula smooths caffeine's edge if you drink it.",
       },
       {
-        q: "What does it taste like?",
-        a: "Light citrus-yuzu, lightly sweetened with monk fruit. No artificial sweeteners, colors, or flavors.",
+        q: "Why capsules instead of a drink?",
+        a: "The Day actives are most stable — and most portable — in capsule form. Two capsules with your morning water, no mixing, no flavor to get tired of.",
       },
       {
         q: "When will I notice a difference?",
@@ -108,9 +103,9 @@ export const products: Product[] = [
     shortName: "Night",
     tagline: "Nighttime Support",
     description:
-      "A melatonin-free 5g evening packet built around magnesium, glycine, and apigenin — to help you fall asleep naturally and wake without grogginess.",
+      "A melatonin-free 10g evening packet built around magnesium, glycine, and apigenin — to help you fall asleep naturally and wake without grogginess.",
     accent: "night",
-    format: "30 × 5g packets",
+    format: "30 × 10g packets",
     priceOneTime: 60,
     priceSubscription: 48,
     ritual:
@@ -178,9 +173,9 @@ export const products: Product[] = [
     shortName: "Duo",
     tagline: "Day + Night System",
     description:
-      "The complete circadian system in one box: 30 Day packets and 30 Night packets, sequenced to support energy, focus, sleep, and recovery around the clock.",
+      "The complete circadian system in one box: a month of Day capsules and 30 Night packets, sequenced to support energy, focus, sleep, and recovery around the clock.",
     accent: "duo",
-    format: "60 × 5g packets · 30 Day + 30 Night",
+    format: "60 Day capsules + 30 × 10g Night packets",
     priceOneTime: 110,
     priceSubscription: 88,
     ritual:
@@ -194,12 +189,12 @@ export const products: Product[] = [
     ingredients: [
       {
         name: "REZE Day",
-        dose: "30 packets",
-        purpose: "Lion's mane, rhodiola, bacopa, theanine, D3+K2, B-complex, electrolytes",
+        dose: "60 capsules",
+        purpose: "Lion's mane, rhodiola, bacopa, theanine, D3+K2, B-complex",
       },
       {
         name: "REZE Night",
-        dose: "30 packets",
+        dose: "30 × 10g packets",
         purpose: "Magnesium bisglycinate, glycine, apigenin, theanine, tart cherry, GABA",
       },
     ],
