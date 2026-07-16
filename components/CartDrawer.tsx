@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/lib/cart";
 import { getProduct } from "@/lib/products";
-import { shopifyCheckoutUrl } from "@/lib/shopify";
+import { createCheckoutUrl } from "@/lib/shopify";
 import { ProductArt } from "./ProductArt";
 
 export function CartDrawer() {
   const { lines, open, setOpen, removeLine, setQty, subtotal } = useCart();
   const ref = useRef<HTMLDialogElement>(null);
+  const [checkingOut, setCheckingOut] = useState(false);
 
   useEffect(() => {
     const dialog = ref.current;
@@ -112,16 +113,23 @@ export function CartDrawer() {
           <button
             type="button"
             className="btn btn--primary cart__checkout"
-            onClick={() => {
-              const url = shopifyCheckoutUrl(lines);
-              if (url) {
-                window.location.assign(url);
-              } else {
-                window.alert("Checkout isn't connected yet — the Shopify store link is coming soon.");
+            disabled={checkingOut}
+            onClick={async () => {
+              if (checkingOut) return;
+              setCheckingOut(true);
+              try {
+                const url = await createCheckoutUrl(lines);
+                if (url) {
+                  window.location.assign(url);
+                } else {
+                  window.alert("Checkout isn't connected yet — the Shopify store link is coming soon.");
+                }
+              } finally {
+                setCheckingOut(false);
               }
             }}
           >
-            Continue to checkout
+            {checkingOut ? "Preparing checkout…" : "Continue to checkout"}
           </button>
         </div>
       )}
