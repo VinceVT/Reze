@@ -17,10 +17,16 @@ export const SHOPIFY_DOMAIN = "rezesupps.myshopify.com";
 
 type VariantMap = Partial<Record<"subscription" | "one-time", string>>;
 
+/*
+ * Numeric variant IDs (the tail of each gid://shopify/ProductVariant/… GID):
+ *   REZE Day       product 9170022138098 · one-time 49809698390258 · monthly 49809698423026
+ *   REZE Night     product 9170022170866 · one-time 49809698455794 · monthly 49809698488562
+ *   The Reset Duo  product 9170022203634 · one-time 49809698521330 · monthly 49809698554098
+ */
 export const shopifyVariants: Record<string, VariantMap> = {
-  // day:        { subscription: "", "one-time": "" },
-  // night:      { subscription: "", "one-time": "" },
-  // "reset-duo": { subscription: "", "one-time": "" },
+  day: { subscription: "49809698423026", "one-time": "49809698390258" },
+  night: { subscription: "49809698488562", "one-time": "49809698455794" },
+  "reset-duo": { subscription: "49809698554098", "one-time": "49809698521330" },
 };
 
 export function isShopifyConfigured(): boolean {
