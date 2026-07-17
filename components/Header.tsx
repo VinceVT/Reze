@@ -18,10 +18,10 @@ export function Header() {
   return (
     <header className="site-header on-dark">
       <div className="container site-header__inner">
-        <Link href="/" className="wordmark" aria-label="REZE home" translate="no">
+        <a href="https://rezehealth.com" className="wordmark" aria-label="REZE home" translate="no">
           <span aria-hidden="true">REZE</span>
           <span className="wordmark__line" aria-hidden="true" />
-        </Link>
+        </a>
 
         <nav className="site-nav" aria-label="Products">
           {nav.map((item) => (

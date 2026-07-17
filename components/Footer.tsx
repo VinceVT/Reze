@@ -5,10 +5,10 @@ export function Footer() {
     <footer className="site-footer on-dark">
       <div className="container site-footer__inner">
         <div>
-          <Link href="/" className="wordmark" aria-label="REZE home" translate="no">
+          <a href="https://rezehealth.com" className="wordmark" aria-label="REZE home" translate="no">
             <span aria-hidden="true">REZE</span>
             <span className="wordmark__line" aria-hidden="true" />
-          </Link>
+          </a>
           <p className="site-footer__tag">
             Reset. Restore. Rise. Two daily rituals — and soon a third — formulated to support your
             body around the clock.
